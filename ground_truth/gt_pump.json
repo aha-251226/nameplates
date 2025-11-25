@@ -1,0 +1,858 @@
+{
+  "dataset_info": {
+    "equipment_type": "Pump",
+    "total_images": 50,
+    "annotations": [
+      {
+        "image_id": "pump_00",
+        "fields": {
+          "equipment_type": "PUMP",
+          "manufacturer": "EBARA",
+          "model_type": "50 DVSA 6.4S",
+          "serial_number": "TU22748-7Z",
+          "manufacture_year": null,
+          "made_in": "TOKYO, JAPAN",
+          "flow_rate": "35–240 L/min",
+          "head": "3.0–9.8 m",
+          "speed": null,
+          "output_power": "700 W",
+          "frequency": "60 Hz",
+          "ambient_temp": "0–40 °C"
+        }
+      },
+      {
+        "image_id": "pump_01",
+        "fields": {
+          "equipment_type": "PUMP",
+          "manufacturer": "KSB",
+          "model_type": "CPK-CM 250-315",
+          "serial_number": "3-761-548 619/3",
+          "manufacture_year": "1991",
+          "made_in": null,
+          "flow_rate": "278 l/s",
+          "head": "18m",
+          "speed": "1450 1/min",
+          "output_power": null,
+          "frequency": null,
+          "ambient_temp": null
+        }
+      },
+      {
+        "image_id": "pump_02",
+        "fields": {
+          "equipment_type": "PUMP",
+          "manufacturer": "EBARA",
+          "model_type": "EUMS15 9N5 Q1BEG E",
+          "serial_number": "3455100009",
+          "manufacture_year": null,
+          "made_in": "ITALY",
+          "flow_rate": "130–400 L/min",
+          "head": "124–75.5 m",
+          "speed": "2900 min⁻¹",
+          "output_power": "11 kW",
+          "frequency": "50 Hz",
+          "ambient_temp": null
+        }
+      },
+      {
+        "image_id": "pump_03",
+        "fields": {
+          "equipment_type": "PUMP",
+          "manufacturer": "EBARA",
+          "model_type": "40P707AU 6.6S",
+          "serial_number": "C108PC1/EPD-5AS1",
+          "manufacture_year": "2015",
+          "made_in": "USA (ROCK HILL, SC)",
+          "flow_rate": "40–73 USGPM",
+          "head": "10–30 ft",
+          "speed": null,
+          "output_power": "0.6kW",
+          "frequency": "60Hz",
+          "ambient_temp": "122°F"
+        }
+      },
+      {
+        "image_id": "pump_04",
+        "fields": {
+          "equipment_type": "PUMP",
+          "manufacturer": "GRUNDFOS",
+          "model_type": "CRK2-180 AX-W-I AUUV",
+          "serial_number": "C40ZA3918P10109",
+          "manufacture_year": null,
+          "made_in": "DENMARK",
+          "flow_rate": "2.5m³/h",
+          "head": "121.4m",
+          "speed": "2900 min⁻¹",
+          "output_power": null,
+          "frequency": null,
+          "ambient_temp": "90°C"
+        }
+      },
+      {
+        "image_id": "pump_05",
+        "fields": {
+          "equipment_type": "PUMP",
+          "manufacturer": "GRUNDFOS",
+          "model_type": "CR10-18 A-FJ-A-E-HQQE",
+          "serial_number": "0008",
+          "manufacture_year": null,
+          "made_in": "DENMARK",
+          "flow_rate": "10m³/h",
+          "head": "149.4 m",
+          "speed": "2919 min⁻¹",
+          "output_power": "7.50kW",
+          "frequency": "50Hz",
+          "ambient_temp": "120°C"
+        }
+      },
+      {
+        "image_id": "pump_06",
+        "fields": {
+          "equipment_type": "PUMP",
+          "manufacturer": "GRUNDFOS",
+          "model_type": "NB40-125/116A-F-A-BAQE",
+          "serial_number": "A98076923P212140001 5",
+          "manufacture_year": null,
+          "made_in": "HUNGARY",
+          "flow_rate": "40.5m³/h",
+          "head": "13.1m",
+          "speed": "2900 min⁻¹",
+          "output_power": null,
+          "frequency": null,
+          "ambient_temp": "120°C"
+        }
+      },
+      {
+        "image_id": "pump_07",
+        "fields": {
+          "equipment_type": "PUMP",
+          "manufacturer": "KIRLOSKAR",
+          "model_type": "KDT-864+",
+          "serial_number": "A22LBH000269",
+          "manufacture_year": null,
+          "made_in": "INDIA",
+          "flow_rate": "5.50l/s",
+          "head": "34m to 62m",
+          "speed": "2900rpm",
+          "output_power": "5.50kW",
+          "frequency": "50Hz",
+          "ambient_temp": null
+        }
+      },
+      {
+        "image_id": "pump_08",
+        "fields": {
+          "equipment_type": "PUMP",
+          "manufacturer": "SULZER",
+          "model_type": "2X4X8.75",
+          "serial_number": "1C197",
+          "manufacture_year": null,
+          "made_in": "USA (Aurora, CO)",
+          "flow_rate": "140 GPM",
+          "head": "1952 FT",
+          "speed": "3560 rpm",
+          "output_power": null,
+          "frequency": null,
+          "ambient_temp": null
+        }
+      },
+      {
+        "image_id": "pump_09",
+        "fields": {
+          "equipment_type": "PUMP",
+          "manufacturer": "GRUNDFOS",
+          "model_type": "CR3-9 A-A-A-E-HQQE",
+          "serial_number": "0004",
+          "manufacture_year": null,
+          "made_in": "DENMARK",
+          "flow_rate": "3 m³/h",
+          "head": "42.7–59.2 m",
+          "speed": "2864 rpm",
+          "output_power": "0.750kW",
+          "frequency": "50Hz",
+          "ambient_temp": "120°C"
+        }
+      },
+      {
+        "image_id": "pump_10",
+        "fields": {
+          "equipment_type": "PUMP",
+          "manufacturer": "EBARA",
+          "model_type": "COMPACT/A AM/8",
+          "serial_number": "10RFFT",
+          "manufacture_year": "2017",
+          "made_in": "ITALY",
+          "flow_rate": "20-80 L/min",
+          "head": "10.5-46 m",
+          "speed": "2800 min⁻¹",
+          "output_power": "0.6 kW",
+          "frequency": "50 Hz",
+          "ambient_temp": "40 °C"
+        }
+      },
+      {
+        "image_id": "pump_11",
+        "fields": {
+          "equipment_type": "PUMP",
+          "manufacturer": "KSB",
+          "model_type": "P1000TNG",
+          "serial_number": "W019598",
+          "manufacture_year": "2023",
+          "made_in": "BRASIL",
+          "flow_rate": "10-50 L/min",
+          "head": "18-65 m",
+          "speed": "3500 min⁻¹",
+          "output_power": "0.74 kW",
+          "frequency": "60 Hz",
+          "ambient_temp": "90 °C"
+        }
+      },
+      {
+        "image_id": "pump_12",
+        "fields": {
+          "equipment_type": "PUMP",
+          "manufacturer": "EBARA",
+          "model_type": "3D/I 40-160/5.56",
+          "serial_number": "2541130016I",
+          "manufacture_year": "2016",
+          "made_in": "ITALY",
+          "flow_rate": "12-50 m³/h",
+          "head": "27.5-44.5 m",
+          "speed": "3480 min⁻¹",
+          "output_power": "16.04–25.5kW",
+          "frequency": "60 Hz",
+          "ambient_temp": "90 °C"
+        }
+      },
+      {
+        "image_id": "pump_13",
+        "fields": {
+          "equipment_type": "PUMP",
+          "manufacturer": "EBARA",
+          "model_type": "50 DSJ 5.4",
+          "serial_number": "T1635989QY",
+          "manufacture_year": null,
+          "made_in": "JAPAN",
+          "flow_rate": "30-210 L/min",
+          "head": "2.8-14.6 m",
+          "speed": null,
+          "output_power": "0.4 kW",
+          "frequency": "50 Hz",
+          "ambient_temp": "0-32 °C"
+        }
+      },
+      {
+        "image_id": "pump_14",
+        "fields": {
+          "equipment_type": "PUMP",
+          "manufacturer": "EBARA",
+          "model_type": "ESA100WN",
+          "serial_number": null,
+          "manufacture_year": "2018",
+          "made_in": "JAPAN",
+          "flow_rate": "10000 L/min",
+          "head": null,
+          "speed": null,
+          "output_power": null,
+          "frequency": "50/60 Hz",
+          "ambient_temp": null
+        }
+      },
+      {
+        "image_id": "pump_15",
+        "fields": {
+          "equipment_type": "PUMP",
+          "manufacturer": "EBARA",
+          "model_type": "DWC-V/E 500/3.0",
+          "serial_number": "2190110004E",
+          "manufacture_year": null,
+          "made_in": "ITALY",
+          "flow_rate": "200–750 L/min",
+          "head": "13.6-26.3 m",
+          "speed": "2900 min⁻¹",
+          "output_power": "3.48–3.0 kW",
+          "frequency": "50 Hz",
+          "ambient_temp": "90 °C"
+        }
+      },
+      {
+        "image_id": "pump_16",
+        "fields": {
+          "equipment_type": "PUMP",
+          "manufacturer": "PENTAX",
+          "model_type": "CB210/00",
+          "serial_number": "19A00010298210106145",
+          "manufacture_year": "2019",
+          "made_in": "ITALY",
+          "flow_rate": "10–140 L/min",
+          "head": "34-57.3 m",
+          "speed": "2800 min⁻¹",
+          "output_power": "1.5–2.6 kW",
+          "frequency": "50 Hz",
+          "ambient_temp": "50 °C"
+        }
+      },
+      {
+        "image_id": "pump_17",
+        "fields": {
+          "equipment_type": "PUMP",
+          "manufacturer": "PEDROLLO",
+          "model_type": "CPm 130",
+          "serial_number": null,
+          "manufacture_year": "2013",
+          "made_in": "ITALY",
+          "flow_rate": "10–80 L/min",
+          "head": "14-23 m",
+          "speed": "2900 min⁻¹",
+          "output_power": "0.37 kW",
+          "frequency": "50 Hz",
+          "ambient_temp": "90 °C"
+        }
+      },
+      {
+        "image_id": "pump_18",
+        "fields": {
+          "equipment_type": "PUMP",
+          "manufacturer": "FLOWSERVE",
+          "model_type": "4HPX14A",
+          "serial_number": "17BE0347",
+          "manufacture_year": "2018",
+          "made_in": "MEXICO",
+          "flow_rate": "500 GPM",
+          "head": "121.0 ft",
+          "speed": "1770 rpm",
+          "output_power": "17.8 HP",
+          "frequency": null,
+          "ambient_temp": "410 °F"
+        }
+      },
+      {
+        "image_id": "pump_19",
+        "fields": {
+          "equipment_type": "PUMP",
+          "manufacturer": "GRUNDFOS",
+          "model_type": "OD64111BJ 01496-1004",
+          "serial_number": "1.04",
+          "manufacture_year": null,
+          "made_in": null,
+          "flow_rate": "130 m³/h",
+          "head": "15 m",
+          "speed": "1450 min⁻¹",
+          "output_power": null,
+          "frequency": null,
+          "ambient_temp": "140 °C"
+        }
+      },
+      {
+        "image_id": "pump_20",
+        "fields": {
+          "equipment_type": "PUMP",
+          "manufacturer": "GRUNDFOS",
+          "model_type": "CRN10-09 MP-FGJ-GI-V",
+          "serial_number": "0002",
+          "manufacture_year": null,
+          "made_in": "DENMARK",
+          "flow_rate": "10 m³/h",
+          "head": "72.3-91.8 m",
+          "speed": "2902 min⁻¹",
+          "output_power": "3.0 kW",
+          "frequency": "50 Hz",
+          "ambient_temp": "90 °C"
+        }
+      },
+      {
+        "image_id": "pump_21",
+        "fields": {
+          "equipment_type": "PUMP",
+          "manufacturer": "GRUNDFOS",
+          "model_type": "CR3-12 A-A-A-E:HQQE",
+          "serial_number": null,
+          "manufacture_year": null,
+          "made_in": "GERMANY",
+          "flow_rate": "3 m³/h",
+          "head": "57-79.1 m",
+          "speed": "2853 min⁻¹",
+          "output_power": "1.1 kW",
+          "frequency": "50 Hz",
+          "ambient_temp": "120 °C"
+        }
+      },
+      {
+        "image_id": "pump_22",
+        "fields": {
+          "equipment_type": "PUMP",
+          "manufacturer": "GRUNDFOS",
+          "model_type": "MTR3-14/4 D-M-A-AQQE",
+          "serial_number": "GE111T3144P0001",
+          "manufacture_year": null,
+          "made_in": "TAIWAN",
+          "flow_rate": "3–3.5 m³/h",
+          "head": "17.7-26.4 m, 27.5-39.1 m",
+          "speed": "2857 min⁻¹, 3447 min⁻¹",
+          "output_power": "1.10 kW",
+          "frequency": "50, 60 Hz",
+          "ambient_temp": "90 °C"
+        }
+      },
+      {
+        "image_id": "pump_23",
+        "fields": {
+          "equipment_type": "PUMP",
+          "manufacturer": "WATETECHPLUS",
+          "model_type": "JETST60",
+          "serial_number": null,
+          "manufacture_year": null,
+          "made_in": null,
+          "flow_rate": "45 L/min",
+          "head": "28 m",
+          "speed": "2850 min⁻¹",
+          "output_power": "0.37 kW",
+          "frequency": "50 Hz",
+          "ambient_temp": null
+        }
+      },
+      {
+        "image_id": "pump_24",
+        "fields": {
+          "equipment_type": "PUMP",
+          "manufacturer": "GRUNDFOS",
+          "model_type": "CR3-36 A-FGJ-A-E-HQQE",
+          "serial_number": "10000093",
+          "manufacture_year": null,
+          "made_in": "HUNGARY",
+          "flow_rate": "3.0 m³/h",
+          "head": "176–239 m",
+          "speed": "2902 min⁻¹",
+          "output_power": "3.0 kW",
+          "frequency": "50 Hz",
+          "ambient_temp": "120 °C"
+        }
+      },
+      {
+        "image_id": "pump_25",
+        "fields": {
+          "equipment_type": "PUMP",
+          "manufacturer": "GRUNDFOS",
+          "model_type": "MTR5-12/12 A-WB-A-HUUV",
+          "serial_number": "0001",
+          "manufacture_year": null,
+          "made_in": "USA",
+          "flow_rate": "30.38 GPM",
+          "head": "291.7-391.7 ft",
+          "speed": "3461 RPM",
+          "output_power": "5.0 HP",
+          "frequency": "60 Hz",
+          "ambient_temp": "194 °F"
+        }
+      },
+      {
+        "image_id": "pump_26",
+        "fields": {
+          "equipment_type": "PUMP",
+          "manufacturer": "GRUNDFOS",
+          "model_type": "CRTE5-9 AN-CA-I-E-HQQE",
+          "serial_number": "0005",
+          "manufacture_year": null,
+          "made_in": "UNITED KINGDOM",
+          "flow_rate": "6.9 m³/h",
+          "head": "68-93.3 m",
+          "speed": "3501 min⁻¹",
+          "output_power": "2.2 kW",
+          "frequency": "50/60 Hz",
+          "ambient_temp": "120 °C"
+        }
+      },
+      {
+        "image_id": "pump_27",
+        "fields": {
+          "equipment_type": "PUMP",
+          "manufacturer": "GRUNDFOS",
+          "model_type": "CRN3-19 X-P-G-E-HUUK",
+          "serial_number": "977491601002",
+          "manufacture_year": null,
+          "made_in": "JAPAN",
+          "flow_rate": "24-89 L/min",
+          "head": "74-183 m",
+          "speed": "3600 min⁻¹",
+          "output_power": "3.0 kW",
+          "frequency": "60 Hz",
+          "ambient_temp": "90 °C"
+        }
+      },
+      {
+        "image_id": "pump_28",
+        "fields": {
+          "equipment_type": "PUMP",
+          "manufacturer": "GRUNDFOS",
+          "model_type": "CR5-4 A-FGJ-A-E-HQQE",
+          "serial_number": "10000240",
+          "manufacture_year": null,
+          "made_in": "MEXICO",
+          "flow_rate": "30.4 GPM",
+          "head": "94.8-137 ft",
+          "speed": "3466 RPM",
+          "output_power": "1.5 HP",
+          "frequency": "60 Hz",
+          "ambient_temp": "248 °F"
+        }
+      },
+      {
+        "image_id": "pump_29",
+        "fields": {
+          "equipment_type": "PUMP",
+          "manufacturer": "GRUNDFOS",
+          "model_type": "CRN1-6 A-FGJ-G-V-HQQV",
+          "serial_number": "0001",
+          "manufacture_year": null,
+          "made_in": "USA",
+          "flow_rate": "9.69 GPM",
+          "head": "133.9-176.8 ft",
+          "speed": "3439 RPM",
+          "output_power": "0.75 HP",
+          "frequency": "60 Hz",
+          "ambient_temp": "194 °F"
+        }
+      },
+      {
+        "image_id": "pump_30",
+        "fields": {
+          "equipment_type": "PUMP",
+          "manufacturer": "GRUNDFOS",
+          "model_type": "SPK4-8/7 A-M-A-RUUV",
+          "serial_number": "543556142601",
+          "manufacture_year": null,
+          "made_in": null,
+          "flow_rate": "40–80 L/MIN",
+          "head": "28–15 / 40–27 M",
+          "speed": null,
+          "output_power": "0.75 KW",
+          "frequency": "50/60 HZ",
+          "ambient_temp": null
+        }
+      },
+      {
+        "image_id": "pump_31",
+        "fields": {
+          "equipment_type": "PUMP",
+          "manufacturer": "DAIKIN",
+          "model_type": "EBHQ006BBV3",
+          "serial_number": "1400660",
+          "manufacture_year": "2014",
+          "made_in": "BELGIUM",
+          "flow_rate": null,
+          "head": null,
+          "speed": null,
+          "output_power": "6.0 KW",
+          "frequency": "50 HZ",
+          "ambient_temp": null
+        }
+      },
+      {
+        "image_id": "pump_32",
+        "fields": {
+          "equipment_type": "PUMP",
+          "manufacturer": "KSB",
+          "model_type": "ETB 065-040-315 GGSAV10D300554",
+          "serial_number": "0500823920 001000 01",
+          "manufacture_year": "2019",
+          "made_in": null,
+          "flow_rate": "20.00 M3/H",
+          "head": "36.90 M",
+          "speed": "1477 1/MIN",
+          "output_power": null,
+          "frequency": null,
+          "ambient_temp": null
+        }
+      },
+      {
+        "image_id": "pump_33",
+        "fields": {
+          "equipment_type": "PUMP",
+          "manufacturer": null,
+          "model_type": "4X12CSB-12",
+          "serial_number": "M-150981",
+          "manufacture_year": "2008",
+          "made_in": null,
+          "flow_rate": "1200 GPM",
+          "head": "6400 FT",
+          "speed": "3580 RPM",
+          "output_power": null,
+          "frequency": null,
+          "ambient_temp": "375 °F"
+        }
+      },
+      {
+        "image_id": "pump_34",
+        "fields": {
+          "equipment_type": "PUMP",
+          "manufacturer": "KSB",
+          "model_type": "ETB 050-032-1251GGSAV11D200222",
+          "serial_number": "9973933789 000100 01",
+          "manufacture_year": "2018",
+          "made_in": null,
+          "flow_rate": "20.00 M3/H",
+          "head": "19.34 M",
+          "speed": "2908 1/MIN",
+          "output_power": null,
+          "frequency": null,
+          "ambient_temp": null
+        }
+      },
+      {
+        "image_id": "pump_35",
+        "fields": {
+          "equipment_type": "PUMP",
+          "manufacturer": "CREDO",
+          "model_type": "CPS350-410",
+          "serial_number": null,
+          "manufacture_year": "2022",
+          "made_in": "CHINA",
+          "flow_rate": "1200 M3/H",
+          "head": "30 M",
+          "speed": "1500 R/MIN",
+          "output_power": "150 KW",
+          "frequency": null,
+          "ambient_temp": null
+        }
+      },
+      {
+        "image_id": "pump_36",
+        "fields": {
+          "equipment_type": "PUMP",
+          "manufacturer": "FLOWSERVE",
+          "model_type": "MK3 STD",
+          "serial_number": "0304-6657",
+          "manufacture_year": "2004",
+          "made_in": null,
+          "flow_rate": null,
+          "head": null,
+          "speed": null,
+          "output_power": null,
+          "frequency": null,
+          "ambient_temp": "100 °F"
+        }
+      },
+      {
+        "image_id": "pump_37",
+        "fields": {
+          "equipment_type": "PUMP",
+          "manufacturer": "EBARA",
+          "model_type": "3M/I 32-160/2.2 IE3",
+          "serial_number": null,
+          "manufacture_year": "2018",
+          "made_in": "ITALY",
+          "flow_rate": "6–20 M3/H",
+          "head": "25-37 M",
+          "speed": "2840 min⁻¹",
+          "output_power": "2.2 KW",
+          "frequency": "50 HZ",
+          "ambient_temp": "90 °C"
+        }
+      },
+      {
+        "image_id": "pump_38",
+        "fields": {
+          "equipment_type": "PUMP",
+          "manufacturer": "LEO",
+          "model_type": "EMH10-5",
+          "serial_number": "FTPAA2207070002",
+          "manufacture_year": null,
+          "made_in": "CHINA",
+          "flow_rate": "167 L/MIN",
+          "head": "69 M",
+          "speed": "2850 min⁻¹",
+          "output_power": "3.5 KW",
+          "frequency": "50 HZ",
+          "ambient_temp": null
+        }
+      },
+      {
+        "image_id": "pump_39",
+        "fields": {
+          "equipment_type": "PUMP",
+          "manufacturer": "SULZER",
+          "model_type": "24 X 24 X 29AZ HSB",
+          "serial_number": "507115",
+          "manufacture_year": null,
+          "made_in": "USA",
+          "flow_rate": "29187 GPM",
+          "head": "765 FT",
+          "speed": "1790 RPM",
+          "output_power": null,
+          "frequency": null,
+          "ambient_temp": null
+        }
+      },
+      {
+        "image_id": "pump_40",
+        "fields": {
+          "equipment_type": "PUMP",
+          "manufacturer": "GRUNDFOS",
+          "model_type": "MTR20-19/6 A-W-A-HQQV",
+          "serial_number": "0001",
+          "manufacture_year": null,
+          "made_in": "HUNGARY",
+          "flow_rate": "21 M3/H",
+          "head": "63.8–88.1 M",
+          "speed": "2919 min⁻¹",
+          "output_power": "7.50 KW",
+          "frequency": "50 HZ",
+          "ambient_temp": "90 °C"
+        }
+      },
+      {
+        "image_id": "pump_41",
+        "fields": {
+          "equipment_type": "PUMP",
+          "manufacturer": "GRUNDFOS",
+          "model_type": "CH2-30 A-W-A-CVBV",
+          "serial_number": null,
+          "manufacture_year": null,
+          "made_in": "HUNGARY",
+          "flow_rate": "2.5 M3/H, 3.0 M3/H",
+          "head": "19.5–28 M, 27.8–40 M",
+          "speed": null,
+          "output_power": "450 W, 670 W",
+          "frequency": "50 HZ, 60 HZ",
+          "ambient_temp": "90 °C"
+        }
+      },
+      {
+        "image_id": "pump_42",
+        "fields": {
+          "equipment_type": "PUMP",
+          "manufacturer": "GRUNDFOS",
+          "model_type": "CR15-03 A-A-A-E-HQQE",
+          "serial_number": "0005",
+          "manufacture_year": null,
+          "made_in": "HUNGARY",
+          "flow_rate": "17 M3/H",
+          "head": "33.2–42.7 M",
+          "speed": "2902 min⁻¹",
+          "output_power": "3.00 KW",
+          "frequency": "50 HZ",
+          "ambient_temp": "120 °C"
+        }
+      },
+      {
+        "image_id": "pump_43",
+        "fields": {
+          "equipment_type": "PUMP",
+          "manufacturer": "GRUNDFOS",
+          "model_type": "STN-3.0B",
+          "serial_number": null,
+          "manufacture_year": null,
+          "made_in": "UNITED KINGDOM",
+          "flow_rate": null,
+          "head": "34 M",
+          "speed": null,
+          "output_power": null,
+          "frequency": "50 HZ",
+          "ambient_temp": "60 °C"
+        }
+      },
+      {
+        "image_id": "pump_44",
+        "fields": {
+          "equipment_type": "PUMP",
+          "manufacturer": "GRUNDFOS",
+          "model_type": "CR15-8 A-GJ-A-E-HQQE-NX2",
+          "serial_number": "10000184",
+          "manufacture_year": null,
+          "made_in": "MEXICO",
+          "flow_rate": "90.3 GPM",
+          "head": "407–528 FT",
+          "speed": "3444 RPM",
+          "output_power": "15 HP",
+          "frequency": "60 HZ",
+          "ambient_temp": "248 °F"
+        }
+      },
+      {
+        "image_id": "pump_45",
+        "fields": {
+          "equipment_type": "PUMP",
+          "manufacturer": "GRUNDFOS",
+          "model_type": "TP 50-160/2 A-F-A-BAQE",
+          "serial_number": null,
+          "manufacture_year": null,
+          "made_in": "HUNGARY",
+          "flow_rate": "20 M3/H",
+          "head": "12.05 M",
+          "speed": "2900 min⁻¹",
+          "output_power": null,
+          "frequency": null,
+          "ambient_temp": "120 °C"
+        }
+      },
+      {
+        "image_id": "pump_46",
+        "fields": {
+          "equipment_type": "PUMP",
+          "manufacturer": "GRUNDFOS",
+          "model_type": "CRI15-17 A-FGI-A-E-HQQE",
+          "serial_number": "10000088",
+          "manufacture_year": null,
+          "made_in": "AUSTRALIA",
+          "flow_rate": "17.0 M3/H",
+          "head": "192–239 M",
+          "speed": "2923 min⁻¹",
+          "output_power": "15.0 KW",
+          "frequency": "50 HZ",
+          "ambient_temp": "120 °C"
+        }
+      },
+      {
+        "image_id": "pump_47",
+        "fields": {
+          "equipment_type": "PUMP",
+          "manufacturer": "KSB",
+          "model_type": "ETB 065-050-125 GG AA10D200752",
+          "serial_number": "9973034129 000100 01",
+          "manufacture_year": "2015",
+          "made_in": null,
+          "flow_rate": "53.00 M3/H",
+          "head": "24.69 M",
+          "speed": "2962 min⁻¹",
+          "output_power": null,
+          "frequency": null,
+          "ambient_temp": null
+        }
+      },
+      {
+        "image_id": "pump_48",
+        "fields": {
+          "equipment_type": "PUMP",
+          "manufacturer": "KSB",
+          "model_type": "RDL 500-700A",
+          "serial_number": "668630",
+          "manufacture_year": "2008",
+          "made_in": "BRAZIL",
+          "flow_rate": "2948 M3/H",
+          "head": "42.4 M",
+          "speed": "880 RPM",
+          "output_power": null,
+          "frequency": null,
+          "ambient_temp": null
+        }
+      },
+      {
+        "image_id": "pump_49",
+        "fields": {
+          "equipment_type": "PUMP",
+          "manufacturer": "KSB",
+          "model_type": "ETB 065-040-125 GGSAV01D200372",
+          "serial_number": "9973740565 000100 01",
+          "manufacture_year": "2018",
+          "made_in": null,
+          "flow_rate": "30.00 M3/H",
+          "head": "30.00 M",
+          "speed": "3567 1/MIN",
+          "output_power": null,
+          "frequency": null,
+          "ambient_temp": null
+        }
+      }
+    ]
+  }
+}
