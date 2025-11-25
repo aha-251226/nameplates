@@ -1,1 +1,1 @@
-# nameplates
+Users are expected to provide clear attribution when using this dataset. Any use, citation, or redistribution of the data should include a reference to the original Git repository and the contributing authors to maintain proper credit. For further inquiries or clarification regarding the dataset, please contact the corresponding author at: aha0810@yonsei.ac.kr
