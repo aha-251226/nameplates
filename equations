@@ -1,0 +1,1914 @@
+{
+  "chemical_engineering_equations_comprehensive": {
+    "metadata": {
+      "version": "1.0.0",
+      "description": "Aspen Essential Engineering Equations",
+      "total_equations": 469,
+      "categories": 9,
+      "source": "Aspen HYSYS/Plus Core Calculations"
+    },
+    "equipment_sizing_validation": {
+      "pumps": {
+        "centrifugal_pump_head": {
+          "equation": "H_total = (P_discharge - P_suction)/(ρ × g) + (Z_discharge - Z_suction) + (v_discharge² - v_suction²)/(2 × g) + h_friction",
+          "description_kr": "원심펌프의 총 양정 계산",
+          "simplified": "H = ΔP / (ρ × g)"
+        },
+        "pump_power": {
+          "equation": "P = (Q × ρ × g × H) / η",
+          "description_kr": "펌프 소요 동력"
+        },
+        "npsh_available": {
+          "equation": "NPSH_a = (P_suction - P_vapor)/(ρ × g) + v²/(2g) + Z - h_friction",
+          "description_kr": "유효 흡입 양정"
+        },
+        "npsh_required": {
+          "equation": "NPSH_r = S × (Q/N)^0.75",
+          "description_kr": "필요 NPSH"
+        },
+        "pump_efficiency": {
+          "equation": "η = (Q × ρ × g × H) / P",
+          "description_kr": "펌프 효율"
+        },
+        "specific_speed": {
+          "equation": "Ns = N × √Q / H^0.75",
+          "description_kr": "비속도"
+        },
+        "affinity_law_flow": {
+          "equation": "Q2/Q1 = (N2/N1) × (D2/D1)³",
+          "description_kr": "상사법칙-유량"
+        },
+        "affinity_law_head": {
+          "equation": "H2/H1 = (N2/N1)² × (D2/D1)²",
+          "description_kr": "상사법칙-양정"
+        },
+        "affinity_law_power": {
+          "equation": "P2/P1 = (N2/N1)³ × (D2/D1)⁵ × (ρ2/ρ1)",
+          "description_kr": "상사법칙-동력"
+        },
+        "minimum_flow": {
+          "equation": "Q_min = 0.1 × Q_BEP",
+          "description_kr": "최소 유량"
+        },
+        "suction_specific_speed": {
+          "equation": "S = N × √Q / NPSH_r^0.75",
+          "description_kr": "흡입 비속도"
+        },
+        "hydraulic_power": {
+          "equation": "P_h = Q × ΔP",
+          "description_kr": "수력학적 동력"
+        },
+        "brake_power": {
+          "equation": "P_brake = P_h / η",
+          "description_kr": "브레이크 동력"
+        },
+        "motor_power": {
+          "equation": "P_motor = P_brake / η_motor × SF",
+          "description_kr": "모터 동력 (안전계수 포함)"
+        },
+        "cavitation_sigma": {
+          "equation": "σ = NPSH_a / H",
+          "description_kr": "캐비테이션 수"
+        }
+      },
+      "compressors": {
+        "compression_ratio": {
+          "equation": "r = P_discharge / P_suction",
+          "description_kr": "압축비"
+        },
+        "isentropic_work": {
+          "equation": "W_s = (γ/(γ-1)) × R × T1 × ((P2/P1)^((γ-1)/γ) - 1)",
+          "description_kr": "등엔트로피 일"
+        },
+        "polytropic_work": {
+          "equation": "W_p = (n/(n-1)) × R × T1 × ((P2/P1)^((n-1)/n) - 1)",
+          "description_kr": "폴리트로픽 일"
+        },
+        "polytropic_efficiency": {
+          "equation": "η_p = ((γ-1)/γ) × (ln(P2/P1)/ln(T2/T1))",
+          "description_kr": "폴리트로픽 효율"
+        },
+        "isentropic_efficiency": {
+          "equation": "η_s = W_s / W_actual",
+          "description_kr": "등엔트로피 효율"
+        },
+        "discharge_temperature": {
+          "equation": "T2 = T1 × (P2/P1)^((γ-1)/γ)",
+          "description_kr": "토출 온도"
+        },
+        "compressor_power": {
+          "equation": "P = m × Cp × T1 × ((P2/P1)^((γ-1)/γ) - 1) / η_s",
+          "description_kr": "압축기 동력"
+        },
+        "multistage_pressure": {
+          "equation": "P_i = P1 × (P_n/P1)^(i/n)",
+          "description_kr": "다단 중간압력"
+        },
+        "intercooler_duty": {
+          "equation": "Q_ic = m × Cp × (T_after_stage - T_before_stage)",
+          "description_kr": "중간냉각기 열부하"
+        },
+        "surge_margin": {
+          "equation": "SM = ((Q_surge - Q_op)/Q_surge) × 100",
+          "description_kr": "서징 여유도"
+        },
+        "head_coefficient": {
+          "equation": "ψ = g × H / (U²)",
+          "description_kr": "헤드 계수"
+        },
+        "flow_coefficient": {
+          "equation": "φ = Q / (A × U)",
+          "description_kr": "유량 계수"
+        },
+        "mach_number": {
+          "equation": "Ma = U / √(γ × R × T)",
+          "description_kr": "마하 수"
+        },
+        "volumetric_efficiency": {
+          "equation": "η_v = 1 - C × ((P2/P1)^(1/n) - 1)",
+          "description_kr": "체적 효율"
+        },
+        "reciprocating_capacity": {
+          "equation": "Q = (π/4) × D² × S × N × n × η_v",
+          "description_kr": "왕복동 용량"
+        },
+        "piston_speed": {
+          "equation": "v_p = 2 × S × N",
+          "description_kr": "피스톤 속도"
+        },
+        "rod_load": {
+          "equation": "F = (P_discharge - P_suction) × A_piston",
+          "description_kr": "로드 하중"
+        },
+        "clearance_volume": {
+          "equation": "V_c = C × V_swept",
+          "description_kr": "간극 용적"
+        },
+        "pressure_ratio_per_stage": {
+          "equation": "r_stage = (r_total)^(1/n_stages)",
+          "description_kr": "단당 압력비"
+        },
+        "impeller_tip_speed": {
+          "equation": "U = π × D × N / 60",
+          "description_kr": "임펠러 주속"
+        }
+      },
+      "heat_exchangers": {
+        "lmtd": {
+          "equation": "LMTD = (ΔT1 - ΔT2) / ln(ΔT1/ΔT2)",
+          "description_kr": "대수평균온도차"
+        },
+        "lmtd_correction": {
+          "equation": "LMTD_corrected = LMTD × F",
+          "description_kr": "보정 LMTD"
+        },
+        "heat_duty": {
+          "equation": "Q = U × A × LMTD × F",
+          "description_kr": "열부하"
+        },
+        "overall_htc": {
+          "equation": "1/U = 1/hi + t_wall/k_wall + Rf_i + Rf_o + 1/ho",
+          "description_kr": "총괄열전달계수"
+        },
+        "sensible_heat": {
+          "equation": "Q = m × Cp × ΔT",
+          "description_kr": "현열"
+        },
+        "latent_heat": {
+          "equation": "Q = m × λ",
+          "description_kr": "잠열"
+        },
+        "ntu": {
+          "equation": "NTU = U × A / C_min",
+          "description_kr": "전열단위수"
+        },
+        "effectiveness": {
+          "equation": "ε = Q_actual / Q_max",
+          "description_kr": "효율"
+        },
+        "heat_capacity_ratio": {
+          "equation": "C = C_min / C_max",
+          "description_kr": "열용량비"
+        },
+        "ntu_counterflow": {
+          "equation": "ε = (1 - exp(-NTU(1-C))) / (1 - C×exp(-NTU(1-C)))",
+          "description_kr": "NTU법-향류"
+        },
+        "ntu_parallel": {
+          "equation": "ε = (1 - exp(-NTU(1+C))) / (1 + C)",
+          "description_kr": "NTU법-병류"
+        },
+        "tube_side_htc": {
+          "equation": "hi = 0.023 × (k/Di) × Re^0.8 × Pr^0.4",
+          "description_kr": "튜브측 열전달계수"
+        },
+        "shell_side_htc": {
+          "equation": "ho = j × (k/De) × Re^0.6 × Pr^(1/3)",
+          "description_kr": "쉘측 열전달계수"
+        },
+        "tube_side_pressure_drop": {
+          "equation": "ΔP_tube = (f × L × ρ × v²)/(2 × Di) × N_passes",
+          "description_kr": "튜브측 압력강하"
+        },
+        "shell_side_pressure_drop": {
+          "equation": "ΔP_shell = f × (G²/2ρ) × (Ds/De) × (L/Lb) × Nb",
+          "description_kr": "쉘측 압력강하"
+        },
+        "fouling_resistance": {
+          "equation": "Rf = 1/U_dirty - 1/U_clean",
+          "description_kr": "오염 열저항"
+        },
+        "tube_count": {
+          "equation": "N_tubes = (π/4) × (CTP × Db²/do²)",
+          "description_kr": "튜브 개수"
+        },
+        "heat_transfer_area": {
+          "equation": "A = N_tubes × π × do × L",
+          "description_kr": "전열면적"
+        },
+        "shell_diameter": {
+          "equation": "Ds = do × (N_tubes/K1)^(1/n1) + clearance",
+          "description_kr": "쉘 직경"
+        },
+        "baffle_spacing": {
+          "equation": "Lb = 0.2 × Ds to 1.0 × Ds",
+          "description_kr": "배플 간격"
+        },
+        "condensation_nusselt": {
+          "equation": "h = 0.729 × ((ρ²×g×k³×hfg)/(μ×L×ΔT))^0.25",
+          "description_kr": "응축 열전달계수"
+        },
+        "boiling_rohsenow": {
+          "equation": "q = μ×hfg×((g(ρL-ρV)/σ))^0.5×(Cp×ΔT/(Csf×hfg×Pr^n))³",
+          "description_kr": "비등 열전달"
+        },
+        "critical_heat_flux": {
+          "equation": "q_CHF = 0.149 × hfg × ρV^0.5 × (σ×g×(ρL-ρV))^0.25",
+          "description_kr": "임계 열유속"
+        },
+        "fin_efficiency": {
+          "equation": "η_fin = tanh(m×L)/(m×L)",
+          "description_kr": "핀 효율"
+        },
+        "overall_surface_efficiency": {
+          "equation": "η_o = 1 - (Af/A)×(1-η_fin)",
+          "description_kr": "전체 표면 효율"
+        },
+        "extended_surface_htc": {
+          "equation": "U_extended = U_bare × η_o",
+          "description_kr": "확장표면 열전달계수"
+        },
+        "mean_temperature_difference": {
+          "equation": "MTD = (T_hot,avg - T_cold,avg)",
+          "description_kr": "평균온도차"
+        },
+        "approach_temperature": {
+          "equation": "ΔT_approach = T_hot,out - T_cold,in",
+          "description_kr": "접근온도"
+        },
+        "temperature_cross": {
+          "equation": "Cross = (T_cold,out > T_hot,out)",
+          "description_kr": "온도교차 확인"
+        },
+        "thermal_effectiveness": {
+          "equation": "ε_thermal = (T_out - T_in)/(T_hot - T_cold,in)",
+          "description_kr": "열효율"
+        }
+      },
+      "vessels": {
+        "cylinder_thickness_asme": {
+          "equation": "t = (P×D)/(2×S×E-1.2×P) + C",
+          "description_kr": "원통 두께(ASME)"
+        },
+        "head_thickness_elliptical": {
+          "equation": "t = (P×D×W)/(2×S×E-0.2×P) + C",
+          "description_kr": "타원형경판 두께"
+        },
+        "head_thickness_hemispherical": {
+          "equation": "t = (P×D)/(4×S×E-0.4×P) + C",
+          "description_kr": "반구형경판 두께"
+        },
+        "head_thickness_torispherical": {
+          "equation": "t = (0.885×P×L)/(S×E-0.1×P) + C",
+          "description_kr": "접시형경판 두께"
+        },
+        "internal_pressure_cylinder": {
+          "equation": "P = (2×S×E×t)/(D+1.2×t)",
+          "description_kr": "내압(원통)"
+        },
+        "external_pressure": {
+          "equation": "P_a = (2×A×E)/(3×(Do/t))",
+          "description_kr": "외압"
+        },
+        "wind_load": {
+          "equation": "F_wind = 0.5×ρ_air×Cd×A_proj×V²",
+          "description_kr": "풍하중"
+        },
+        "seismic_load": {
+          "equation": "F_seismic = C_s×W",
+          "description_kr": "지진하중"
+        },
+        "weight_empty": {
+          "equation": "W_empty = ρ_steel×t×A_surface",
+          "description_kr": "공중량"
+        },
+        "weight_operating": {
+          "equation": "W_op = W_empty + W_liquid + W_internals",
+          "description_kr": "운전중량"
+        },
+        "weight_test": {
+          "equation": "W_test = W_empty + ρ_water×V_internal",
+          "description_kr": "시험중량"
+        },
+        "nozzle_reinforcement": {
+          "equation": "A_req = d×t×F",
+          "description_kr": "노즐 보강면적"
+        },
+        "nozzle_load": {
+          "equation": "F = P×A_nozzle + F_piping",
+          "description_kr": "노즐 하중"
+        },
+        "saddle_support": {
+          "equation": "R = W/(2×μ)",
+          "description_kr": "새들 반력"
+        },
+        "skirt_thickness": {
+          "equation": "t_skirt = (M×c)/(π×D_skirt²×S) + (W/(π×D_skirt×S))",
+          "description_kr": "스커트 두께"
+        },
+        "leg_load": {
+          "equation": "F_leg = W/N_legs × (1 + M/(D×N_legs))",
+          "description_kr": "레그 하중"
+        },
+        "anchor_bolt_tension": {
+          "equation": "T = (M_overturn - W×r)/N_bolts",
+          "description_kr": "앵커볼트 인장"
+        },
+        "liquid_surge_volume": {
+          "equation": "V_surge = Q×t_surge",
+          "description_kr": "서지 용량"
+        },
+        "vapor_disengagement": {
+          "equation": "v_sep = K×√((ρL-ρV)/ρV)",
+          "description_kr": "기액분리 속도"
+        },
+        "demister_area": {
+          "equation": "A_dm = Q_vapor/(v_dm×3600)",
+          "description_kr": "데미스터 면적"
+        },
+        "vessel_volume_vertical": {
+          "equation": "V = (π/4)×D²×(H + 0.67×D)",
+          "description_kr": "수직드럼 용적"
+        },
+        "vessel_volume_horizontal": {
+          "equation": "V = (π/4)×D²×(L + 0.67×D)",
+          "description_kr": "수평드럼 용적"
+        },
+        "liquid_holdup_time": {
+          "equation": "t_holdup = V_liquid/Q",
+          "description_kr": "액체 체류시간"
+        },
+        "vapor_velocity": {
+          "equation": "v_vapor = Q_vapor/(A×3600)",
+          "description_kr": "증기 속도"
+        },
+        "flooding_velocity": {
+          "equation": "v_flood = K_flood×√((ρL-ρV)/ρV)",
+          "description_kr": "플러딩 속도"
+        }
+      },
+      "distillation": {
+        "fenske_minimum_stages": {
+          "equation": "N_min = log((xD/xB)×((1-xB)/(1-xD)))/log(α_avg)",
+          "description_kr": "최소 이론단수"
+        },
+        "underwood_minimum_reflux": {
+          "equation": "R_min = Σ(αi×xD,i/(αi-θ)) - 1",
+          "description_kr": "최소 환류비"
+        },
+        "underwood_theta": {
+          "equation": "Σ(αi×xF,i/(αi-θ)) = 1-q",
+          "description_kr": "Underwood θ"
+        },
+        "gilliland_correlation": {
+          "equation": "Y = 1-exp((1+54.4X)/(11+117.2X)×(X-1)/X^0.5)",
+          "description_kr": "Gilliland 상관식"
+        },
+        "operating_reflux": {
+          "equation": "R = 1.2 × R_min to 1.5 × R_min",
+          "description_kr": "운전 환류비"
+        },
+        "number_of_stages": {
+          "equation": "N = N_min + (N-N_min from Gilliland)",
+          "description_kr": "실제 단수"
+        },
+        "feed_location": {
+          "equation": "N_feed = N × (xF-xB)/(xD-xB)",
+          "description_kr": "공급단 위치"
+        },
+        "raoults_law": {
+          "equation": "yi = (Pi_sat×xi)/P_total",
+          "description_kr": "라울의 법칙"
+        },
+        "relative_volatility": {
+          "equation": "α = (yi/xi)/(yj/xj)",
+          "description_kr": "상대휘발도"
+        },
+        "vle_k_value": {
+          "equation": "Ki = yi/xi",
+          "description_kr": "K-value"
+        },
+        "bubble_point": {
+          "equation": "Σ(xi×Ki) = 1",
+          "description_kr": "기포점"
+        },
+        "dew_point": {
+          "equation": "Σ(yi/Ki) = 1",
+          "description_kr": "이슬점"
+        },
+        "q_line": {
+          "equation": "q = (H_vapor - H_feed)/(H_vapor - H_liquid)",
+          "description_kr": "q-line"
+        },
+        "rectifying_section": {
+          "equation": "yn+1 = (R/(R+1))×xn + (xD/(R+1))",
+          "description_kr": "정류부 조작선"
+        },
+        "stripping_section": {
+          "equation": "yn+1 = ((R+q)/(R+1))×xn - ((q-1)/(R+1))×xB",
+          "description_kr": "증류부 조작선"
+        },
+        "column_diameter": {
+          "equation": "D = √(4×Q_vapor/(π×v_design×ε))",
+          "description_kr": "탑 직경"
+        },
+        "flooding_velocity_souders_brown": {
+          "equation": "v_flood = Csb×√((ρL-ρV)/ρV)",
+          "description_kr": "플러딩 속도"
+        },
+        "design_velocity": {
+          "equation": "v_design = 0.8 × v_flood",
+          "description_kr": "설계 속도"
+        },
+        "tray_spacing": {
+          "equation": "t_spacing = 0.45 to 0.60 m",
+          "description_kr": "트레이 간격"
+        },
+        "downcomer_area": {
+          "equation": "A_dc = 0.1 × A_column",
+          "description_kr": "다운커머 면적"
+        },
+        "active_area": {
+          "equation": "A_active = A_column - 2×A_dc",
+          "description_kr": "활성 면적"
+        },
+        "hole_area": {
+          "equation": "A_hole = 0.1 × A_active",
+          "description_kr": "개구 면적"
+        },
+        "weir_height": {
+          "equation": "hw = how + 0.6×(qL/Lw)^(2/3)",
+          "description_kr": "워어 높이"
+        },
+        "weir_length": {
+          "equation": "Lw = 0.7 × D_column",
+          "description_kr": "워어 길이"
+        },
+        "tray_pressure_drop": {
+          "equation": "ΔP_tray = ΔP_dry + ΔP_liquid + ΔP_residual",
+          "description_kr": "트레이 압력강하"
+        },
+        "dry_tray_drop": {
+          "equation": "ΔP_dry = (ρV×vh²)/(2×Co²)",
+          "description_kr": "건조판 압력강하"
+        },
+        "liquid_head_drop": {
+          "equation": "ΔP_liq = ρL×g×hL",
+          "description_kr": "액층 압력강하"
+        },
+        "murphree_efficiency": {
+          "equation": "EMV = (yn-yn+1)/(yn*-yn+1)",
+          "description_kr": "Murphree 효율"
+        },
+        "overall_efficiency_oconnell": {
+          "equation": "Eo = exp(-4.14×Z^0.5)",
+          "description_kr": "O'Connell 효율"
+        },
+        "hetp_packed_column": {
+          "equation": "HETP = C×Dc^0.5×μL^0.16×ρL^0.25",
+          "description_kr": "충진탑 HETP"
+        },
+        "htu_gas_phase": {
+          "equation": "HTU_OG = G/(kya×P×a)",
+          "description_kr": "기상 HTU"
+        },
+        "ntu_number": {
+          "equation": "NTU = ∫(dy/(y-y*))",
+          "description_kr": "NTU"
+        },
+        "packed_height": {
+          "equation": "Z = HTU × NTU",
+          "description_kr": "충진 높이"
+        },
+        "packing_factor": {
+          "equation": "F_p = (specific surface area)",
+          "description_kr": "충진물 계수"
+        },
+        "pressure_drop_packed": {
+          "equation": "ΔP/Z = f×G²×Fp/(ρL×ε³)",
+          "description_kr": "충진탑 압력강하"
+        },
+        "flooding_point_packed": {
+          "equation": "G_flood from Sherwood correlation",
+          "description_kr": "충진탑 플러딩점"
+        },
+        "condenser_duty": {
+          "equation": "Q_cond = (R+1)×D×λ",
+          "description_kr": "응축기 열부하"
+        },
+        "reboiler_duty": {
+          "equation": "Q_reb = (R+1)×D×λ + Q_loss",
+          "description_kr": "재비기 열부하"
+        },
+        "heat_balance": {
+          "equation": "F×HF = D×HD + B×HB + Q_cond - Q_reb",
+          "description_kr": "열수지"
+        },
+        "material_balance": {
+          "equation": "F = D + B",
+          "description_kr": "물질수지"
+        }
+      },
+      "reactors": {
+        "cstr_volume": {
+          "equation": "V = FA0×XA/(-rA)",
+          "description_kr": "CSTR 부피"
+        },
+        "pfr_volume": {
+          "equation": "V = FA0×∫(dXA/(-rA))",
+          "description_kr": "PFR 부피"
+        },
+        "batch_time": {
+          "equation": "t = CA0×∫(dXA/(-rA))",
+          "description_kr": "회분식 반응시간"
+        },
+        "space_time": {
+          "equation": "τ = V/v0",
+          "description_kr": "공간시간"
+        },
+        "space_velocity": {
+          "equation": "SV = v0/V",
+          "description_kr": "공간속도"
+        },
+        "residence_time": {
+          "equation": "t_res = V×ε/v0",
+          "description_kr": "체류시간"
+        },
+        "arrhenius": {
+          "equation": "k = A×exp(-Ea/(R×T))",
+          "description_kr": "Arrhenius 식"
+        },
+        "first_order": {
+          "equation": "-rA = k×CA",
+          "description_kr": "1차 반응"
+        },
+        "second_order": {
+          "equation": "-rA = k×CA²",
+          "description_kr": "2차 반응"
+        },
+        "nth_order": {
+          "equation": "-rA = k×CA^n",
+          "description_kr": "n차 반응"
+        },
+        "conversion": {
+          "equation": "XA = (CA0-CA)/CA0",
+          "description_kr": "전환율"
+        },
+        "selectivity": {
+          "equation": "S = r_desired/r_undesired",
+          "description_kr": "선택도"
+        },
+        "yield": {
+          "equation": "Y = moles_product/(moles_reactant_fed×stoich)",
+          "description_kr": "수율"
+        },
+        "damkohler_number": {
+          "equation": "Da = k×τ",
+          "description_kr": "Damköhler 수"
+        },
+        "thiele_modulus": {
+          "equation": "φ = L×√(k/Deff)",
+          "description_kr": "Thiele modulus"
+        },
+        "effectiveness_factor": {
+          "equation": "η = tanh(3φ)/(3φ)",
+          "description_kr": "효율계수"
+        },
+        "weisz_prater": {
+          "equation": "CWP = (-rA_obs)×ρc×R²/Deff×CAs",
+          "description_kr": "Weisz-Prater 기준"
+        },
+        "catalyst_deactivation": {
+          "equation": "a = exp(-kd×t)",
+          "description_kr": "촉매 비활성도"
+        },
+        "adiabatic_temperature_rise": {
+          "equation": "ΔTad = (-ΔHrxn×CA0×XA)/(ρ×Cp)",
+          "description_kr": "단열온도상승"
+        },
+        "heat_generation": {
+          "equation": "Qgen = (-ΔHrxn)×rA×V",
+          "description_kr": "반응 발열"
+        },
+        "heat_removal": {
+          "equation": "Qremoval = U×A×(T-Tc)",
+          "description_kr": "열제거"
+        },
+        "cstr_energy_balance": {
+          "equation": "FA0×(HA0-HA) = Qgen - Qremoval",
+          "description_kr": "CSTR 에너지수지"
+        },
+        "pfr_energy_balance": {
+          "equation": "dT/dV = ((-ΔHrxn)×rA - U×a×(T-Tc))/(FA0×Cp)",
+          "description_kr": "PFR 에너지수지"
+        },
+        "multiple_reactions_series": {
+          "equation": "A → B → C, S = k1/k2",
+          "description_kr": "직렬반응"
+        },
+        "multiple_reactions_parallel": {
+          "equation": "A → B, A → C, S = k1/k2",
+          "description_kr": "병렬반응"
+        },
+        "equilibrium_constant": {
+          "equation": "K = exp(-ΔG°/(R×T))",
+          "description_kr": "평형상수"
+        },
+        "equilibrium_conversion": {
+          "equation": "XAe = K/(1+K)",
+          "description_kr": "평형전환율"
+        },
+        "reversible_reaction": {
+          "equation": "-rA = k1×CA - k2×CB",
+          "description_kr": "가역반응"
+        },
+        "langmuir_hinshelwood": {
+          "equation": "-rA = (k×KA×PA)/(1+KA×PA+KB×PB)²",
+          "description_kr": "Langmuir-Hinshelwood"
+        },
+        "eley_rideal": {
+          "equation": "-rA = (k×KA×PA×PB)/(1+KA×PA)",
+          "description_kr": "Eley-Rideal"
+        }
+      },
+      "piping_fluid_flow": {
+        "darcy_weisbach": {
+          "equation": "ΔP = f×(L/D)×(ρ×v²/2)",
+          "description_kr": "Darcy-Weisbach"
+        },
+        "hagen_poiseuille": {
+          "equation": "ΔP = (32×μ×L×v)/(D²)",
+          "description_kr": "층류 압력강하"
+        },
+        "reynolds_number": {
+          "equation": "Re = (ρ×v×D)/μ",
+          "description_kr": "Reynolds 수"
+        },
+        "friction_factor_laminar": {
+          "equation": "f = 64/Re",
+          "description_kr": "층류 마찰계수"
+        },
+        "colebrook_white": {
+          "equation": "1/√f = -2×log((ε/D)/3.7 + 2.51/(Re×√f))",
+          "description_kr": "Colebrook-White"
+        },
+        "swamee_jain": {
+          "equation": "f = 0.25/(log((ε/D)/3.7 + 5.74/Re^0.9))²",
+          "description_kr": "Swamee-Jain"
+        },
+        "hazen_williams": {
+          "equation": "v = 0.849×C×R^0.63×S^0.54",
+          "description_kr": "Hazen-Williams"
+        },
+        "manning_equation": {
+          "equation": "v = (1/n)×R^(2/3)×S^0.5",
+          "description_kr": "Manning 식"
+        },
+        "bernoulli": {
+          "equation": "P1/ρg + v1²/2g + z1 = P2/ρg + v2²/2g + z2 + hL",
+          "description_kr": "Bernoulli 방정식"
+        },
+        "continuity": {
+          "equation": "A1×v1 = A2×v2",
+          "description_kr": "연속방정식"
+        },
+        "mass_flow": {
+          "equation": "m = ρ×Q",
+          "description_kr": "질량유량"
+        },
+        "volumetric_flow": {
+          "equation": "Q = A×v",
+          "description_kr": "체적유량"
+        },
+        "velocity": {
+          "equation": "v = 4×Q/(π×D²)",
+          "description_kr": "유속"
+        },
+        "pipe_wall_thickness": {
+          "equation": "t = (P×D)/(2×S×E×W) + C",
+          "description_kr": "배관 두께"
+        },
+        "schedule_number": {
+          "equation": "Sch = 1000×P/S",
+          "description_kr": "Schedule 번호"
+        },
+        "minor_loss_k": {
+          "equation": "hL = K×v²/2g",
+          "description_kr": "국부손실(K법)"
+        },
+        "minor_loss_leq": {
+          "equation": "hL = f×(Leq/D)×v²/2g",
+          "description_kr": "국부손실(등가길이)"
+        },
+        "valve_cv": {
+          "equation": "Q = Cv×√(ΔP/SG)",
+          "description_kr": "밸브 Cv"
+        },
+        "valve_kv": {
+          "equation": "Q = Kv×√(ΔP/ρ)",
+          "description_kr": "밸브 Kv"
+        },
+        "orifice_flow": {
+          "equation": "Q = Cd×A×√(2×ΔP/ρ)",
+          "description_kr": "오리피스 유량"
+        },
+        "venturi_flow": {
+          "equation": "Q = Cv×A2×√(2×ΔP/(ρ×(1-(A2/A1)²)))",
+          "description_kr": "벤투리 유량"
+        },
+        "flow_nozzle": {
+          "equation": "Q = Cf×A×√(2×ΔP/ρ)",
+          "description_kr": "플로우노즐 유량"
+        },
+        "pitot_tube": {
+          "equation": "v = √(2×ΔP/ρ)",
+          "description_kr": "피토관 속도"
+        },
+        "weir_flow": {
+          "equation": "Q = C×L×H^1.5",
+          "description_kr": "웨어 유량"
+        },
+        "froude_number": {
+          "equation": "Fr = v/√(g×L)",
+          "description_kr": "Froude 수"
+        },
+        "weber_number": {
+          "equation": "We = (ρ×v²×L)/σ",
+          "description_kr": "Weber 수"
+        },
+        "cavitation_number": {
+          "equation": "σ = (P-Pv)/(0.5×ρ×v²)",
+          "description_kr": "캐비테이션 수"
+        },
+        "two_phase_homogeneous": {
+          "equation": "ΔP_tp = ΔP_L×(1+(x×(ρL/ρG-1)))^0.5",
+          "description_kr": "2상 균질류"
+        },
+        "two_phase_lockhart_martinelli": {
+          "equation": "ΔP_tp = ΔP_L×φL²",
+          "description_kr": "Lockhart-Martinelli"
+        },
+        "void_fraction": {
+          "equation": "α = vG/(vG+vL)",
+          "description_kr": "공극률"
+        },
+        "slip_ratio": {
+          "equation": "S = vG/vL",
+          "description_kr": "슬립비"
+        },
+        "quality": {
+          "equation": "x = mG/(mG+mL)",
+          "description_kr": "건도"
+        },
+        "sonic_velocity": {
+          "equation": "c = √(γ×R×T)",
+          "description_kr": "음속"
+        },
+        "mach_number": {
+          "equation": "Ma = v/c",
+          "description_kr": "Mach 수"
+        },
+        "choking_flow": {
+          "equation": "Ma = 1 at throat",
+          "description_kr": "초킹 유동"
+        },
+        "stokes_law": {
+          "equation": "vt = (2/9)×(ρp-ρf)×g×r²/μ",
+          "description_kr": "Stokes 법칙"
+        },
+        "drag_coefficient": {
+          "equation": "Cd = Fd/(0.5×ρ×v²×A)",
+          "description_kr": "항력계수"
+        },
+        "terminal_velocity": {
+          "equation": "vt = √(4×g×d×(ρp-ρf)/(3×Cd×ρf))",
+          "description_kr": "종말속도"
+        },
+        "settling_velocity": {
+          "equation": "vs = (ρp-ρf)×g×d²/(18×μ)",
+          "description_kr": "침강속도"
+        },
+        "cyclone_cutoff": {
+          "equation": "d50 = √(9×μ×W/(2×π×Nе×vt×(ρp-ρf)))",
+          "description_kr": "사이클론 분리입경"
+        },
+        "pressure_recovery": {
+          "equation": "ΔP_rec = 0.5×ρ×(v1²-v2²)",
+          "description_kr": "압력회복"
+        },
+        "hydraulic_diameter": {
+          "equation": "Dh = 4×A/P",
+          "description_kr": "수력직경"
+        },
+        "equivalent_diameter": {
+          "equation": "De = √(4×A/π)",
+          "description_kr": "등가직경"
+        },
+        "hydraulic_gradient": {
+          "equation": "S = hL/L",
+          "description_kr": "동수경사"
+        },
+        "specific_energy": {
+          "equation": "E = y + v²/2g",
+          "description_kr": "비에너지"
+        }
+      },
+      "thermodynamics": {
+        "ideal_gas": {
+          "equation": "P×V = n×R×T",
+          "description_kr": "이상기체"
+        },
+        "van_der_waals": {
+          "equation": "(P+a/V²)×(V-b) = R×T",
+          "description_kr": "van der Waals"
+        },
+        "redlich_kwong": {
+          "equation": "P = RT/(V-b) - a/(T^0.5×V×(V+b))",
+          "description_kr": "Redlich-Kwong"
+        },
+        "soave_rk": {
+          "equation": "P = RT/(V-b) - (a×α)/(V×(V+b))",
+          "description_kr": "Soave-RK"
+        },
+        "peng_robinson": {
+          "equation": "P = RT/(V-b) - (a×α)/(V²+2bV-b²)",
+          "description_kr": "Peng-Robinson"
+        },
+        "virial_equation": {
+          "equation": "Z = 1 + B/V + C/V²",
+          "description_kr": "Virial"
+        },
+        "compressibility": {
+          "equation": "Z = P×V/(n×R×T)",
+          "description_kr": "압축인자"
+        },
+        "acentric_factor": {
+          "equation": "ω = -log(Pr_sat at Tr=0.7) - 1.0",
+          "description_kr": "이심인자"
+        },
+        "antoine": {
+          "equation": "log(P) = A - B/(C+T)",
+          "description_kr": "Antoine"
+        },
+        "clausius_clapeyron": {
+          "equation": "ln(P2/P1) = (ΔHvap/R)×(1/T1-1/T2)",
+          "description_kr": "Clausius-Clapeyron"
+        },
+        "wagner": {
+          "equation": "ln(Pr) = (Aτ+Bτ^1.5+Cτ^3+Dτ^6)/Tr",
+          "description_kr": "Wagner"
+        },
+        "enthalpy_sensible": {
+          "equation": "ΔH = ∫Cp×dT",
+          "description_kr": "현열"
+        },
+        "enthalpy_latent": {
+          "equation": "ΔH = λ",
+          "description_kr": "잠열"
+        },
+        "entropy_change": {
+          "equation": "ΔS = ∫(Cp/T)×dT",
+          "description_kr": "엔트로피"
+        },
+        "gibbs_free_energy": {
+          "equation": "ΔG = ΔH - T×ΔS",
+          "description_kr": "Gibbs"
+        },
+        "helmholtz_free_energy": {
+          "equation": "ΔA = ΔU - T×ΔS",
+          "description_kr": "Helmholtz"
+        },
+        "internal_energy": {
+          "equation": "ΔU = Q - W",
+          "description_kr": "내부에너지"
+        },
+        "cp_polynomial": {
+          "equation": "Cp = A + B×T + C×T² + D×T³",
+          "description_kr": "열용량 polynomial"
+        },
+        "cp_ratio": {
+          "equation": "γ = Cp/Cv",
+          "description_kr": "비열비"
+        },
+        "cv_from_cp": {
+          "equation": "Cv = Cp - R",
+          "description_kr": "정적비열"
+        },
+        "mixing_rule_ideal": {
+          "equation": "V_mix = Σ(xi×Vi)",
+          "description_kr": "이상 혼합"
+        },
+        "excess_volume": {
+          "equation": "V_E = V_mix - Σ(xi×Vi)",
+          "description_kr": "과잉부피"
+        },
+        "excess_enthalpy": {
+          "equation": "H_E = H_mix - Σ(xi×Hi)",
+          "description_kr": "과잉엔탈피"
+        },
+        "excess_gibbs": {
+          "equation": "G_E = G_mix - Σ(xi×Gi)",
+          "description_kr": "과잉Gibbs"
+        },
+        "margules_2suffix": {
+          "equation": "ln(γ1) = A×x2²",
+          "description_kr": "Margules 2-suffix"
+        },
+        "margules_3suffix": {
+          "equation": "ln(γ1) = x2²×(A12+2×(A21-A12)×x1)",
+          "description_kr": "Margules 3-suffix"
+        },
+        "van_laar": {
+          "equation": "ln(γ1) = A/(1+(A×x1/(B×x2)))²",
+          "description_kr": "van Laar"
+        },
+        "wilson": {
+          "equation": "ln(γ1) = -ln(x1+Λ12×x2) + x2×(Λ12/(x1+Λ12×x2)-Λ21/(Λ21×x1+x2))",
+          "description_kr": "Wilson"
+        },
+        "nrtl": {
+          "equation": "ln(γ1) = x2²×(τ21×G21²/(x1+x2×G21)² + τ12×G12/(x2+x1×G12)²)",
+          "description_kr": "NRTL"
+        },
+        "uniquac": {
+          "equation": "ln(γi) = ln(γi_comb) + ln(γi_res)",
+          "description_kr": "UNIQUAC"
+        },
+        "unifac": {
+          "equation": "ln(γi) = ln(γi_C) + ln(γi_R)",
+          "description_kr": "UNIFAC"
+        },
+        "raoults_law": {
+          "equation": "yi = (Pi_sat×xi)/P",
+          "description_kr": "Raoult"
+        },
+        "modified_raoults": {
+          "equation": "yi×φi×P = xi×γi×Pi_sat",
+          "description_kr": "수정 Raoult"
+        },
+        "henrys_law": {
+          "equation": "Pi = Hi×xi",
+          "description_kr": "Henry"
+        },
+        "phi_phi_approach": {
+          "equation": "yi×φi_V×P = xi×φi_L×P",
+          "description_kr": "φ-φ법"
+        },
+        "k_value": {
+          "equation": "Ki = yi/xi",
+          "description_kr": "K-value"
+        },
+        "dew_point_calc": {
+          "equation": "Σ(yi/Ki) = 1",
+          "description_kr": "이슬점"
+        },
+        "bubble_point_calc": {
+          "equation": "Σ(Ki×xi) = 1",
+          "description_kr": "기포점"
+        },
+        "flash_rachford_rice": {
+          "equation": "Σ(zi×(Ki-1)/(1+V/F×(Ki-1))) = 0",
+          "description_kr": "Rachford-Rice"
+        },
+        "isothermal_work": {
+          "equation": "W = n×R×T×ln(V2/V1)",
+          "description_kr": "등온일"
+        },
+        "adiabatic_work": {
+          "equation": "W = (P2×V2-P1×V1)/(γ-1)",
+          "description_kr": "단열일"
+        },
+        "polytropic_work": {
+          "equation": "W = (n/(n-1))×(P2×V2-P1×V1)",
+          "description_kr": "폴리트로픽일"
+        },
+        "isothermal_compression": {
+          "equation": "P1×V1 = P2×V2",
+          "description_kr": "등온압축"
+        },
+        "adiabatic_process": {
+          "equation": "P1×V1^γ = P2×V2^γ",
+          "description_kr": "단열과정"
+        },
+        "polytropic_process": {
+          "equation": "P1×V1^n = P2×V2^n",
+          "description_kr": "폴리트로픽"
+        },
+        "carnot_efficiency": {
+          "equation": "η = 1 - Tc/Th",
+          "description_kr": "Carnot 효율"
+        },
+        "rankine_efficiency": {
+          "equation": "η = (W_turbine-W_pump)/Q_in",
+          "description_kr": "Rankine 효율"
+        },
+        "brayton_efficiency": {
+          "equation": "η = 1 - 1/r^((γ-1)/γ)",
+          "description_kr": "Brayton 효율"
+        },
+        "cop_refrigeration": {
+          "equation": "COP = Q_c/W",
+          "description_kr": "냉동 COP"
+        },
+        "cop_heat_pump": {
+          "equation": "COP = Q_h/W",
+          "description_kr": "히트펌프 COP"
+        },
+        "critical_temperature": {
+          "equation": "Tc = f(molecular structure)",
+          "description_kr": "임계온도"
+        },
+        "critical_pressure": {
+          "equation": "Pc = f(molecular structure)",
+          "description_kr": "임계압력"
+        },
+        "critical_volume": {
+          "equation": "Vc = f(molecular structure)",
+          "description_kr": "임계부피"
+        },
+        "reduced_temperature": {
+          "equation": "Tr = T/Tc",
+          "description_kr": "환산온도"
+        },
+        "reduced_pressure": {
+          "equation": "Pr = P/Pc",
+          "description_kr": "환산압력"
+        },
+        "fugacity_coefficient": {
+          "equation": "φ = f/P",
+          "description_kr": "퓨가시티계수"
+        },
+        "fugacity_liquid": {
+          "equation": "fi_L = xi×γi×fi_pure",
+          "description_kr": "액상 퓨가시티"
+        },
+        "fugacity_vapor": {
+          "equation": "fi_V = yi×φi×P",
+          "description_kr": "기상 퓨가시티"
+        },
+        "poynting_correction": {
+          "equation": "fi = fi_sat×exp(Vi×(P-Psat)/(R×T))",
+          "description_kr": "Poynting 보정"
+        },
+        "rackett_equation": {
+          "equation": "V = Vc×Z_RA^((1-Tr)^(2/7))",
+          "description_kr": "Rackett (밀도)"
+        },
+        "lucas_viscosity": {
+          "equation": "μ = f(Tc,Pc,ω,T,P)",
+          "description_kr": "Lucas (점도)"
+        },
+        "chung_viscosity": {
+          "equation": "μ = f(M,Tc,Pc,ω)",
+          "description_kr": "Chung (점도)"
+        },
+        "thermal_conductivity_gas": {
+          "equation": "k = f(Cp,μ,M)",
+          "description_kr": "기체 열전도도"
+        },
+        "thermal_conductivity_liquid": {
+          "equation": "k = A×(1-Tr)^0.38/Tr^(1/6)",
+          "description_kr": "액체 열전도도"
+        },
+        "surface_tension": {
+          "equation": "σ = σ0×(1-Tr)^n",
+          "description_kr": "표면장력"
+        },
+        "diffusivity_gas": {
+          "equation": "D = (T^1.75)/P×√(1/MA+1/MB)/(σAB²×ΩD)",
+          "description_kr": "기체 확산계수"
+        },
+        "diffusivity_liquid": {
+          "equation": "D = 7.4e-8×(φ×MB)^0.5×T/(μB×VA^0.6)",
+          "description_kr": "액체 확산계수"
+        },
+        "joule_thomson": {
+          "equation": "μJT = (∂T/∂P)H",
+          "description_kr": "Joule-Thomson 계수"
+        },
+        "throttling_process": {
+          "equation": "H1 = H2",
+          "description_kr": "교축과정"
+        },
+        "quality_steam": {
+          "equation": "x = (H-Hf)/Hfg",
+          "description_kr": "증기 건도"
+        },
+        "saturation_dome": {
+          "equation": "T_sat = f(P)",
+          "description_kr": "포화선"
+        },
+        "superheat_degree": {
+          "equation": "ΔT_superheat = T - T_sat",
+          "description_kr": "과열도"
+        },
+        "subcooling_degree": {
+          "equation": "ΔT_subcool = T_sat - T",
+          "description_kr": "과냉각도"
+        }
+      },
+      "heat_transfer": {
+        "fourier_law": {
+          "equation": "q = -k×A×(dT/dx)",
+          "description_kr": "Fourier 법칙"
+        },
+        "thermal_resistance": {
+          "equation": "R = L/(k×A)",
+          "description_kr": "열저항"
+        },
+        "composite_wall": {
+          "equation": "q = ΔT/ΣR",
+          "description_kr": "복합벽"
+        },
+        "cylinder_conduction": {
+          "equation": "q = 2π×k×L×(T1-T2)/ln(r2/r1)",
+          "description_kr": "원통 전도"
+        },
+        "sphere_conduction": {
+          "equation": "q = 4π×k×(T1-T2)/(1/r1-1/r2)",
+          "description_kr": "구 전도"
+        },
+        "critical_insulation_radius": {
+          "equation": "r_cr = k/h",
+          "description_kr": "임계 단열반경"
+        },
+        "newtons_cooling": {
+          "equation": "q = h×A×ΔT",
+          "description_kr": "Newton 냉각"
+        },
+        "nusselt_number": {
+          "equation": "Nu = h×L/k",
+          "description_kr": "Nusselt 수"
+        },
+        "prandtl_number": {
+          "equation": "Pr = μ×Cp/k",
+          "description_kr": "Prandtl 수"
+        },
+        "grashof_number": {
+          "equation": "Gr = (g×β×ΔT×L³)/ν²",
+          "description_kr": "Grashof 수"
+        },
+        "rayleigh_number": {
+          "equation": "Ra = Gr×Pr",
+          "description_kr": "Rayleigh 수"
+        },
+        "dittus_boelter": {
+          "equation": "Nu = 0.023×Re^0.8×Pr^n",
+          "description_kr": "Dittus-Boelter"
+        },
+        "sieder_tate": {
+          "equation": "Nu = 0.027×Re^0.8×Pr^(1/3)×(μ/μw)^0.14",
+          "description_kr": "Sieder-Tate"
+        },
+        "gnielinski": {
+          "equation": "Nu = ((f/8)×(Re-1000)×Pr)/(1+12.7×(f/8)^0.5×(Pr^(2/3)-1))",
+          "description_kr": "Gnielinski"
+        },
+        "petukhov": {
+          "equation": "Nu = ((f/8)×Re×Pr)/(1.07+12.7×(f/8)^0.5×(Pr^(2/3)-1))",
+          "description_kr": "Petukhov"
+        },
+        "laminar_pipe": {
+          "equation": "Nu = 3.66 (constant T) or 4.36 (constant q)",
+          "description_kr": "층류 관내"
+        },
+        "vertical_plate": {
+          "equation": "Nu = 0.59×Ra^0.25 (laminar)",
+          "description_kr": "수직판"
+        },
+        "horizontal_plate": {
+          "equation": "Nu = 0.54×Ra^0.25 (hot up)",
+          "description_kr": "수평판"
+        },
+        "cylinder_natural": {
+          "equation": "Nu = (0.6+0.387×Ra^(1/6))²",
+          "description_kr": "원통 자연대류"
+        },
+        "stefan_boltzmann": {
+          "equation": "q = ε×σ×A×T⁴",
+          "description_kr": "Stefan-Boltzmann"
+        },
+        "radiation_exchange": {
+          "equation": "q = σ×A1×F12×(T1⁴-T2⁴)",
+          "description_kr": "복사 교환"
+        },
+        "view_factor": {
+          "equation": "A1×F12 = A2×F21",
+          "description_kr": "형태계수"
+        },
+        "gray_body": {
+          "equation": "q = ε×σ×A×(T1⁴-T2⁴)",
+          "description_kr": "회체"
+        },
+        "radiation_shield": {
+          "equation": "q_with_shield = q_without/(1+1/ε)",
+          "description_kr": "복사 차폐"
+        },
+        "nusselt_condensation": {
+          "equation": "h = 0.943×((ρ²×g×k³×hfg)/(μ×L×ΔT))^0.25",
+          "description_kr": "Nusselt 응축"
+        },
+        "condensation_vertical": {
+          "equation": "h = 1.13×((ρ²×g×k³×hfg)/(μ×ΔT×L))^0.25",
+          "description_kr": "수직면 응축"
+        },
+        "condensation_horizontal": {
+          "equation": "h = 0.725×((ρ²×g×k³×hfg)/(μ×ΔT×D))^0.25",
+          "description_kr": "수평관 응축"
+        },
+        "filmwise_condensation": {
+          "equation": "h_filmwise > h_dropwise",
+          "description_kr": "막상 응축"
+        },
+        "nucleate_boiling": {
+          "equation": "q = μ×hfg×((g(ρL-ρV)/σ))^0.5×(Cp×ΔT/hfg)³",
+          "description_kr": "핵비등"
+        },
+        "pool_boiling_rohsenow": {
+          "equation": "q/A = μ×hfg×((g(ρL-ρV)/σ))^0.5×(Cp×ΔT/(Csf×hfg×Pr^1.7))³",
+          "description_kr": "Rohsenow"
+        },
+        "critical_heat_flux": {
+          "equation": "q_CHF = 0.149×hfg×ρV×(σ×g×(ρL-ρV))^0.25",
+          "description_kr": "CHF"
+        },
+        "film_boiling": {
+          "equation": "h = 0.62×((k³×ρV×g×(ρL-ρV)×hfg)/(μV×D×ΔT))^0.25",
+          "description_kr": "막비등"
+        },
+        "flow_boiling": {
+          "equation": "h_tp = h_nb×F + h_conv×S",
+          "description_kr": "유동 비등"
+        },
+        "fin_efficiency": {
+          "equation": "η = tanh(m×L)/(m×L)",
+          "description_kr": "핀 효율"
+        },
+        "fin_parameter": {
+          "equation": "m = √(h×P/(k×A))",
+          "description_kr": "핀 파라미터"
+        },
+        "overall_fin_efficiency": {
+          "equation": "η_o = 1-(Af/A)×(1-η_fin)",
+          "description_kr": "전체 핀효율"
+        },
+        "finned_surface_area": {
+          "equation": "A_total = A_base + η_fin×A_fin",
+          "description_kr": "핀 전열면적"
+        },
+        "stanton_number": {
+          "equation": "St = Nu/(Re×Pr)",
+          "description_kr": "Stanton 수"
+        },
+        "peclet_number": {
+          "equation": "Pe = Re×Pr",
+          "description_kr": "Peclet 수"
+        },
+        "biot_number": {
+          "equation": "Bi = h×L/k",
+          "description_kr": "Biot 수"
+        },
+        "fourier_number": {
+          "equation": "Fo = α×t/L²",
+          "description_kr": "Fourier 수"
+        },
+        "lumped_capacitance": {
+          "equation": "T = T∞ + (Ti-T∞)×exp(-h×A×t/(ρ×V×Cp))",
+          "description_kr": "집중용량법"
+        },
+        "semi_infinite_solid": {
+          "equation": "T = T∞ + (Ti-T∞)×erf(x/(2×√(α×t)))",
+          "description_kr": "반무한고체"
+        },
+        "heisler_chart": {
+          "equation": "Use Heisler charts for Bi>0.1",
+          "description_kr": "Heisler 선도"
+        },
+        "wilson_plot": {
+          "equation": "1/U = 1/hi + Rw + 1/ho",
+          "description_kr": "Wilson plot"
+        },
+        "log_mean_area": {
+          "equation": "A_lm = (A2-A1)/ln(A2/A1)",
+          "description_kr": "대수평균면적"
+        },
+        "corrected_lmtd": {
+          "equation": "ΔT_m = F×LMTD",
+          "description_kr": "보정 LMTD"
+        },
+        "crossflow_unmixed": {
+          "equation": "F from charts",
+          "description_kr": "교류 비혼합"
+        },
+        "multi_pass_correction": {
+          "equation": "F = f(R,P,configuration)",
+          "description_kr": "다중패스 보정"
+        },
+        "thermal_diffusivity": {
+          "equation": "α = k/(ρ×Cp)",
+          "description_kr": "열확산율"
+        },
+        "thermal_penetration": {
+          "equation": "δ = √(α×t)",
+          "description_kr": "열침투깊이"
+        },
+        "heat_generation": {
+          "equation": "q_gen = q_dot×V",
+          "description_kr": "내부 발열"
+        },
+        "contact_resistance": {
+          "equation": "R_c = ΔT/(q/A)",
+          "description_kr": "접촉저항"
+        },
+        "thermal_boundary_layer": {
+          "equation": "δ_t/δ = Pr^(-1/3)",
+          "description_kr": "열경계층"
+        }
+      },
+      "mass_transfer": {
+        "ficks_first": {
+          "equation": "J = -D×(dC/dx)",
+          "description_kr": "Fick 1법칙"
+        },
+        "ficks_second": {
+          "equation": "dC/dt = D×(d²C/dx²)",
+          "description_kr": "Fick 2법칙"
+        },
+        "diffusivity_gas_chapman": {
+          "equation": "DAB = (1.86e-3×T^1.5)/P×√(1/MA+1/MB)/(σAB²×ΩD)",
+          "description_kr": "Chapman-Enskog"
+        },
+        "diffusivity_liquid_wilke": {
+          "equation": "DAB = 7.4e-8×(φ×MB)^0.5×T/(μB×VA^0.6)",
+          "description_kr": "Wilke-Chang"
+        },
+        "diffusivity_solid": {
+          "equation": "D = D0×exp(-Ea/(R×T))",
+          "description_kr": "고체 확산"
+        },
+        "mass_transfer_coeff": {
+          "equation": "NA = kc×(CA-CAi)",
+          "description_kr": "물질전달계수"
+        },
+        "mass_flux": {
+          "equation": "N = k×ΔC",
+          "description_kr": "물질플럭스"
+        },
+        "sherwood_number": {
+          "equation": "Sh = kc×L/D",
+          "description_kr": "Sherwood 수"
+        },
+        "schmidt_number": {
+          "equation": "Sc = μ/(ρ×D)",
+          "description_kr": "Schmidt 수"
+        },
+        "lewis_number": {
+          "equation": "Le = α/D = Sc/Pr",
+          "description_kr": "Lewis 수"
+        },
+        "chilton_colburn": {
+          "equation": "jD = St×Sc^(2/3)",
+          "description_kr": "Chilton-Colburn"
+        },
+        "heat_mass_analogy": {
+          "equation": "Sh/Sc^(1/3) = Nu/Pr^(1/3)",
+          "description_kr": "열-물질 상사"
+        },
+        "henrys_law": {
+          "equation": "PA = H×xA",
+          "description_kr": "Henry 법칙"
+        },
+        "distribution_coefficient": {
+          "equation": "m = y/x",
+          "description_kr": "분배계수"
+        },
+        "kremser_equation": {
+          "equation": "N = ln((y1-mx2)/(y2-mx2)×(1-1/A)+1/A)/ln(A)",
+          "description_kr": "Kremser"
+        },
+        "absorption_factor": {
+          "equation": "A = L/(m×G)",
+          "description_kr": "흡수인자"
+        },
+        "stripping_factor": {
+          "equation": "S = m×G/L",
+          "description_kr": "탈거인자"
+        },
+        "colburn_equation": {
+          "equation": "N_OG = ln((y1-mx2)/(y2-mx2))",
+          "description_kr": "Colburn"
+        },
+        "htu_gas": {
+          "equation": "HTU_OG = G/(kya×P)",
+          "description_kr": "기상 HTU"
+        },
+        "htu_liquid": {
+          "equation": "HTU_OL = L/(kxa)",
+          "description_kr": "액상 HTU"
+        },
+        "ntu_gas": {
+          "equation": "NTU_OG = ∫dy/(y-y*)",
+          "description_kr": "기상 NTU"
+        },
+        "ntu_liquid": {
+          "equation": "NTU_OL = ∫dx/(x*-x)",
+          "description_kr": "액상 NTU"
+        },
+        "packed_height": {
+          "equation": "Z = HTU×NTU",
+          "description_kr": "충진 높이"
+        },
+        "two_film_theory": {
+          "equation": "1/KG = 1/(kG×H) + 1/kL",
+          "description_kr": "2중막 이론"
+        },
+        "overall_gas_coeff": {
+          "equation": "1/KG = 1/kg + m/kl",
+          "description_kr": "총괄 기상계수"
+        },
+        "overall_liquid_coeff": {
+          "equation": "1/KL = 1/(m×kg) + 1/kl",
+          "description_kr": "총괄 액상계수"
+        },
+        "extract_raffinate": {
+          "equation": "E = (CF-CR)/(CE-CR)",
+          "description_kr": "추출효율"
+        },
+        "single_stage_extraction": {
+          "equation": "x1 = x0×(F/(F+m×S))",
+          "description_kr": "단일단 추출"
+        },
+        "multistage_crosscurrent": {
+          "equation": "xN = x0/(1+m×S/F)^N",
+          "description_kr": "다단 향류추출"
+        },
+        "drying_rate": {
+          "equation": "R = -W×(dX/dt)",
+          "description_kr": "건조속도"
+        },
+        "constant_rate_period": {
+          "equation": "R = h×A×(T∞-Ts)/λ",
+          "description_kr": "항률건조"
+        },
+        "falling_rate_period": {
+          "equation": "R = k×(X-Xe)",
+          "description_kr": "감률건조"
+        },
+        "critical_moisture": {
+          "equation": "Xc from experiment",
+          "description_kr": "임계수분"
+        },
+        "supersaturation": {
+          "equation": "S = C/C_sat",
+          "description_kr": "과포화도"
+        },
+        "nucleation_rate": {
+          "equation": "B = kn×ΔC^n",
+          "description_kr": "핵생성속도"
+        },
+        "crystal_growth": {
+          "equation": "G = kg×ΔC^g",
+          "description_kr": "결정성장"
+        },
+        "membrane_flux": {
+          "equation": "J = (P×ΔP)/μ×δ",
+          "description_kr": "막 플럭스"
+        },
+        "selectivity": {
+          "equation": "α = (yA/yB)/(xA/xB)",
+          "description_kr": "선택도"
+        },
+        "permeability": {
+          "equation": "P = D×S",
+          "description_kr": "투과도"
+        },
+        "ro_flux": {
+          "equation": "J = A×(ΔP-Δπ)",
+          "description_kr": "역삼투 플럭스"
+        },
+        "langmuir_isotherm": {
+          "equation": "q = qm×K×P/(1+K×P)",
+          "description_kr": "Langmuir"
+        },
+        "freundlich_isotherm": {
+          "equation": "q = K×C^(1/n)",
+          "description_kr": "Freundlich"
+        },
+        "bet_isotherm": {
+          "equation": "multilayer adsorption",
+          "description_kr": "BET"
+        },
+        "breakthrough_time": {
+          "equation": "tb = (ρb×q0×L)/(C0×v)",
+          "description_kr": "파과시간"
+        },
+        "equimolar_counterdiffusion": {
+          "equation": "NA = -NB",
+          "description_kr": "등몰 반대확산"
+        },
+        "diffusion_through_stagnant": {
+          "equation": "NA = (D×P)/(R×T×z)×ln((P-PA2)/(P-PA1))",
+          "description_kr": "정체층 확산"
+        },
+        "penetration_theory": {
+          "equation": "kL = 2×√(D/(π×t))",
+          "description_kr": "침투이론"
+        },
+        "surface_renewal": {
+          "equation": "kL = √(D×s)",
+          "description_kr": "표면갱신이론"
+        }
+      },
+      "process_control": {
+        "pid_output": {
+          "equation": "u(t) = Kp×e + Ki×∫e×dt + Kd×de/dt",
+          "description_kr": "PID 출력"
+        },
+        "proportional_only": {
+          "equation": "u = Kp×e",
+          "description_kr": "P 제어"
+        },
+        "pi_control": {
+          "equation": "u = Kp×(e + (1/Ti)×∫e×dt)",
+          "description_kr": "PI 제어"
+        },
+        "pd_control": {
+          "equation": "u = Kp×(e + Td×de/dt)",
+          "description_kr": "PD 제어"
+        },
+        "first_order_lag": {
+          "equation": "τ×dy/dt + y = K×x",
+          "description_kr": "1차 지연"
+        },
+        "second_order": {
+          "equation": "τ²×d²y/dt² + 2ζτ×dy/dt + y = K×x",
+          "description_kr": "2차계"
+        },
+        "dead_time": {
+          "equation": "y(t) = x(t-θ)",
+          "description_kr": "사시간"
+        },
+        "transfer_function": {
+          "equation": "G(s) = Y(s)/X(s)",
+          "description_kr": "전달함수"
+        },
+        "characteristic_equation": {
+          "equation": "1 + G(s)×H(s) = 0",
+          "description_kr": "특성방정식"
+        },
+        "closed_loop": {
+          "equation": "Y/R = G/(1+G×H)",
+          "description_kr": "폐루프"
+        },
+        "open_loop_gain": {
+          "equation": "Kol = G×H",
+          "description_kr": "개루프 이득"
+        },
+        "ziegler_nichols_p": {
+          "equation": "Kp = 0.5×Ku",
+          "description_kr": "ZN P튜닝"
+        },
+        "ziegler_nichols_pi": {
+          "equation": "Kp=0.45×Ku, Ti=Pu/1.2",
+          "description_kr": "ZN PI튜닝"
+        },
+        "ziegler_nichols_pid": {
+          "equation": "Kp=0.6×Ku, Ti=Pu/2, Td=Pu/8",
+          "description_kr": "ZN PID튜닝"
+        },
+        "cohen_coon": {
+          "equation": "Kp = (1/K)×(τ/θ)×(A+B×θ/τ)",
+          "description_kr": "Cohen-Coon"
+        },
+        "imc_tuning": {
+          "equation": "Kp = (2ζ-1)×τ/(K×λ)",
+          "description_kr": "IMC 튜닝"
+        },
+        "lambda_tuning": {
+          "equation": "Ti = τ, Td = τ/(2ζ-1)",
+          "description_kr": "Lambda 튜닝"
+        },
+        "offset": {
+          "equation": "e_ss = R/(1+Kp)",
+          "description_kr": "오프셋"
+        },
+        "integral_windup": {
+          "equation": "anti-windup required",
+          "description_kr": "적분포화"
+        },
+        "derivative_kick": {
+          "equation": "use filtered derivative",
+          "description_kr": "미분킥"
+        },
+        "control_valve_cv": {
+          "equation": "Q = Cv×√(ΔP/SG)",
+          "description_kr": "밸브 Cv"
+        },
+        "valve_gain": {
+          "equation": "Kv = dQ/dx",
+          "description_kr": "밸브 이득"
+        },
+        "installed_characteristic": {
+          "equation": "Q/Q_max = f(x, ΔP/ΔP_max)",
+          "description_kr": "설치특성"
+        },
+        "valve_rangeability": {
+          "equation": "R = Q_max/Q_min",
+          "description_kr": "레인지어빌리티"
+        },
+        "valve_turndown": {
+          "equation": "TD = Q_normal/Q_min",
+          "description_kr": "턴다운"
+        },
+        "cascade_control": {
+          "equation": "primary→secondary",
+          "description_kr": "캐스케이드"
+        },
+        "feedforward": {
+          "equation": "u = -Gd/Gc×d",
+          "description_kr": "피드포워드"
+        },
+        "ratio_control": {
+          "equation": "Q2/Q1 = K",
+          "description_kr": "비율제어"
+        },
+        "split_range": {
+          "equation": "two valves, one signal",
+          "description_kr": "스플릿 레인지"
+        },
+        "override_control": {
+          "equation": "select high/low",
+          "description_kr": "오버라이드"
+        },
+        "ise": {
+          "equation": "ISE = ∫e²×dt",
+          "description_kr": "제곱오차적분"
+        },
+        "iae": {
+          "equation": "IAE = ∫|e|×dt",
+          "description_kr": "절대오차적분"
+        },
+        "itae": {
+          "equation": "ITAE = ∫t×|e|×dt",
+          "description_kr": "시간가중절대오차"
+        },
+        "decay_ratio": {
+          "equation": "DR = A2/A1",
+          "description_kr": "감쇠비"
+        },
+        "overshoot": {
+          "equation": "OS = (y_max-y_ss)/y_ss×100",
+          "description_kr": "오버슛"
+        },
+        "rise_time": {
+          "equation": "tr = time to 90% of y_ss",
+          "description_kr": "상승시간"
+        },
+        "settling_time": {
+          "equation": "ts = time to ±2% of y_ss",
+          "description_kr": "정착시간"
+        },
+        "smith_predictor": {
+          "equation": "compensate dead time",
+          "description_kr": "Smith 예측기"
+        },
+        "internal_model_control": {
+          "equation": "IMC structure",
+          "description_kr": "내부모델제어"
+        }
+      },
+      "safety": {
+        "relief_liquid_api520": {
+          "equation": "A = (Q×√SG)/(38×Kd×Kw×Kc×Kv×√ΔP)",
+          "description_kr": "액체 릴리프"
+        },
+        "relief_gas_api520": {
+          "equation": "A = (W×√(T×Z))/(C×Kd×P1×Kb×√M)",
+          "description_kr": "기체 릴리프"
+        },
+        "relief_steam_api520": {
+          "equation": "A = W/(51.5×Kd×Ksh×P1)",
+          "description_kr": "증기 릴리프"
+        },
+        "relief_two_phase": {
+          "equation": "use HEM or HNE model",
+          "description_kr": "2상 릴리프"
+        },
+        "overpressure": {
+          "equation": "OP = (Pset-Pdesign)/Pdesign×100",
+          "description_kr": "과압"
+        },
+        "accumulation": {
+          "equation": "Acc = (Prelief-MAWP)/MAWP×100",
+          "description_kr": "누적"
+        },
+        "back_pressure": {
+          "equation": "BP = Pdownstream/Pset×100",
+          "description_kr": "배압"
+        },
+        "set_pressure": {
+          "equation": "Pset ≤ MAWP",
+          "description_kr": "설정압력"
+        },
+        "fire_relief_api521": {
+          "equation": "Q = 21000×A^0.82",
+          "description_kr": "화재 열부하"
+        },
+        "wetted_surface": {
+          "equation": "A_w = π×D×(0.9×H or L)",
+          "description_kr": "젖은 표면적"
+        },
+        "environmental_factor": {
+          "equation": "F = f(insulation, water spray)",
+          "description_kr": "환경계수"
+        },
+        "tnt_equivalency": {
+          "equation": "W_TNT = η×m×ΔHc/4680",
+          "description_kr": "TNT 환산"
+        },
+        "overpressure_tnt": {
+          "equation": "ΔP = 808×(1+Z/4.5)/(Z²×√(1+(Z/0.048)²))",
+          "description_kr": "폭발 과압"
+        },
+        "scaled_distance": {
+          "equation": "Z = R/W^(1/3)",
+          "description_kr": "환산거리"
+        },
+        "blast_wave_speed": {
+          "equation": "U = a×(1+6×ΔP/P0)",
+          "description_kr": "폭풍파 속도"
+        },
+        "peak_side_overpressure": {
+          "equation": "Ps_max = 2×Ps",
+          "description_kr": "측면 최대과압"
+        },
+        "reflected_pressure": {
+          "equation": "Pr = 2×Ps×(7P0+4Ps)/(7P0+Ps)",
+          "description_kr": "반사압력"
+        },
+        "dynamic_pressure": {
+          "equation": "q = 2.5×Ps²/(P0+Ps)",
+          "description_kr": "동압"
+        },
+        "positive_phase_duration": {
+          "equation": "td = W^(1/3)/c",
+          "description_kr": "정압지속시간"
+        },
+        "impulse": {
+          "equation": "I = ∫P×dt",
+          "description_kr": "충격량"
+        },
+        "lel_mixture": {
+          "equation": "LEL_mix = 1/Σ(yi/LELi)",
+          "description_kr": "혼합물 LEL"
+        },
+        "uel_mixture": {
+          "equation": "UEL_mix = 1/Σ(yi/UELi)",
+          "description_kr": "혼합물 UEL"
+        },
+        "lfl_temperature_correction": {
+          "equation": "LFL_T = LFL_25 - ΔT×0.08",
+          "description_kr": "온도보정 LFL"
+        },
+        "mie": {
+          "equation": "MIE from experiments",
+          "description_kr": "최소점화에너지"
+        },
+        "autoignition_temp": {
+          "equation": "AIT from data",
+          "description_kr": "자연발화온도"
+        },
+        "thermal_radiation": {
+          "equation": "I = F×τ×Q/(4π×r²)",
+          "description_kr": "열복사"
+        },
+        "view_factor": {
+          "equation": "F = geometric",
+          "description_kr": "형상계수"
+        },
+        "atmospheric_transmissivity": {
+          "equation": "τ = 2.02×(Pw×r)^(-0.09)",
+          "description_kr": "대기투과율"
+        },
+        "pool_fire_diameter": {
+          "equation": "D = √(4×A/π)",
+          "description_kr": "풀화재 직경"
+        },
+        "flame_height": {
+          "equation": "L = 42×D×(m_dot/(ρ_air×√(g×D)))^0.61",
+          "description_kr": "화염높이"
+        },
+        "flame_tilt": {
+          "equation": "cos(θ) = 1/(1+(U/Uc)²)",
+          "description_kr": "화염경사"
+        },
+        "jet_fire_length": {
+          "equation": "L = 5.3×d×Ma^0.4",
+          "description_kr": "제트화염 길이"
+        },
+        "fireball_diameter": {
+          "equation": "D = 5.8×m^(1/3)",
+          "description_kr": "화구 직경"
+        },
+        "fireball_duration": {
+          "equation": "t = 0.45×m^(1/3)",
+          "description_kr": "화구 지속시간"
+        },
+        "toxic_load": {
+          "equation": "TL = C×t",
+          "description_kr": "독성부하"
+        },
+        "probit": {
+          "equation": "Y = k1 + k2×ln(C^n×t)",
+          "description_kr": "Probit"
+        },
+        "fatality_probability": {
+          "equation": "P = 0.5×(1+erf((Y-5)/(√2)))",
+          "description_kr": "사망확률"
+        },
+        "erpg_levels": {
+          "equation": "ERPG-1, ERPG-2, ERPG-3",
+          "description_kr": "ERPG"
+        },
+        "idlh": {
+          "equation": "Immediately Dangerous to Life or Health",
+          "description_kr": "IDLH"
+        },
+        "gaussian_plume": {
+          "equation": "C = (Q/(2π×u×σy×σz))×exp(-y²/(2σy²))×exp(-z²/(2σz²))",
+          "description_kr": "가우시안 확산"
+        },
+        "pasquill_gifford": {
+          "equation": "σy,σz from P-G curves",
+          "description_kr": "Pasquill-Gifford"
+        },
+        "britter_mcquaid": {
+          "equation": "heavy gas dispersion",
+          "description_kr": "고밀도 가스"
+        },
+        "source_strength": {
+          "equation": "Q = m_dot",
+          "description_kr": "배출강도"
+        },
+        "bleve_mass": {
+          "equation": "m_flash = m_total×Cp×(T-Tb)/λ",
+          "description_kr": "BLEVE 질량"
+        },
+        "bleve_energy": {
+          "equation": "E = m×Cp×(T-T0) + m_flash×λ",
+          "description_kr": "BLEVE 에너지"
+        },
+        "fragment_range": {
+          "equation": "R = C×√E",
+          "description_kr": "파편 비거리"
+        },
+        "vent_sizing_diers": {
+          "equation": "A = Φ×Q/(G×C)",
+          "description_kr": "벤트 크기(DIERS)"
+        },
+        "runaway_reaction": {
+          "equation": "TMRad < 24 hours",
+          "description_kr": "폭주반응"
+        },
+        "dust_explosion_kst": {
+          "equation": "Kst = (dP/dt)_max×V^(1/3)",
+          "description_kr": "분진폭발지수"
+        },
+        "static_electricity": {
+          "equation": "minimize charge accumulation",
+          "description_kr": "정전기"
+        }
+      }
+    }
+  }
+} 
